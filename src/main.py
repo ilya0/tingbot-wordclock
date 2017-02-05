@@ -143,7 +143,10 @@ def loop():
         elif h2 <= 12:
             addWordToClock(words_hours[h2])
         else:
-            addWordToClock(words_hours[h2 - 12])
+            if m <= 30:
+                addWordToClock(words_hours[h2 - 13])
+            else:
+                addWordToClock(words_hours[h2 - 12])
         
         if h2 == 11 or h2 == 23:
             addWordToClock(words_el)
