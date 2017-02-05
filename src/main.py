@@ -46,6 +46,7 @@ words_morning = [13,0,7]
 words_at = [13,8,2]
 words_night = [13,11,5]
 words_evening = [14,0,7]
+words_el = [9,2,2]
 
 words_minutes = [
     [0,13,3],   #one
