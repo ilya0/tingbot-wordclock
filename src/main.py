@@ -106,6 +106,8 @@ def loop():
     addWordToClock(words_it)
     addWordToClock(words_is)
     
+    # minutes
+    
     if m == 0:
         if h == 0:
             addWordToClock(words_midnight)
@@ -113,7 +115,6 @@ def loop():
             addWordToClock(words_noon)
         else:
             addWordToClock(words_oclock)
-            
     else:
         if m <= 20:
             addWordToClock(words_minutes[m - 1])
@@ -133,32 +134,34 @@ def loop():
         else:
             addWordToClock(words_to)
             ++h2
-            
+    
+    # hours
+    
     if not (m == 0 and (h == 0 or h == 12)):
         if h2 == 0:
             addWordToClock(words_hours[11])
         elif h2 <= 12:
-            addWordToClock(words_hours[h2 - 1])
+            addWordToClock(words_hours[h2])
         else:
-            addWordToClock(words_hours[h2 - 13])
-    
-    if h2 == 11 or h2 == 23:
-        addWordToClock(words_el)
+            addWordToClock(words_hours[h2 - 12])
         
-    if h < 6:
-        addWordToClock(words_at)
-        addWordToClock(words_night)
-    elif h < 12:
-        addWordToClock(words_in)
-        addWordToClock(words_the)
-        addWordToClock(words_morning)
-    elif h < 18:
-        addWordToClock(words_in)
-        addWordToClock(words_the)
-        addWordToClock(words_afternoon)
-    else:
-        addWordToClock(words_at)
-        addWordToClock(words_night)
+        if h2 == 11 or h2 == 23:
+            addWordToClock(words_el)
+            
+        if h < 6:
+            addWordToClock(words_at)
+            addWordToClock(words_night)
+        elif h < 12:
+            addWordToClock(words_in)
+            addWordToClock(words_the)
+            addWordToClock(words_morning)
+        elif h < 18:
+            addWordToClock(words_in)
+            addWordToClock(words_the)
+            addWordToClock(words_afternoon)
+        else:
+            addWordToClock(words_at)
+            addWordToClock(words_night)
     
     screen.fill(color=(26,26,26))
     for y in range(gridH):
